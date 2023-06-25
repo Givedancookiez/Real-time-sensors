@@ -6,8 +6,7 @@ set up a microcontroller, and a sensor and be able to write into file into the l
 possible choices for microcontroller is arduino Uno, ESP32: currently no worries on power consuption, only 1 sensor is planned so no worries about gpios/ communication protocols etc:
 most likely for future proofing will pick ESP32 for Bluetooth and wifi capabilities
 
-Choice for sensor: BME688 reasoning: secondary sensor used at my workplace so im familiar, able to detect humidity, gas sensing, temperature and pressure. might add more sensors in the
-future. 3.6 volts so only need usb to power
+Choice for sensor: BME688, able to detect humidity, gas sensing, temperature and pressure. might add more sensors in the future. 3.6 volts so only need usb to power
 
 I don't think the microcontrollers are capable of multithreading, something interesting to consider in the future when using a raspberry pi or other small microprocessors
 
@@ -20,7 +19,9 @@ V1.0 goals: complete the circuitry between microcontroller and sensor, be able t
     
 Future planning
 1. instead of saving locally, uploading into a database - a lot of databases have free tiers such as AWS. Most likely going to create this using relational instead of nonrelational
+    - should ask michael for thingsboard access/ usecase
 2. Some realtime sensors are so fast because they have a data cleaning/processing step within the firmware, when uploading to a cloud the data comes preprocessed. Our sensors
-at the workplace does not have speed at a priority since frequency is low but a BME688 is faster 
+at the workplace does not have speed at a priority since frequency is low but a BME688 is faster
+     -this can be expanded on by creating dashboards and the kinds of processing I want to add with the limitations of memory
 3. Drawing my own PCB using KiCAD, requirments for its capabilities is currently not clear. this is going to be a later iteration when I will consider adding more sensors and work with
 aritficial limitations. I can see a lot of possible issues with its design, so this is up in the air in terms of goals.
